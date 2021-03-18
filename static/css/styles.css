@@ -1,0 +1,447 @@
+:root {
+  --main-red: #cf242a;
+  --main-black: #010101;
+  --main-white: #ffffff;
+}
+
+@font-face {
+  font-family: "GrilledCheese BTN Toasted";
+  font-style: normal;
+  font-weight: normal;
+  src: local("GrilledCheese BTN Toasted"),
+    url("GrilledCheese BTN Toasted.woff") format("woff");
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+html,
+body {
+  width: 100%;
+}
+
+body {
+  font: 20px "Titillium Web", sans-serif;
+  letter-spacing: 0.03em;
+}
+.page-container {
+  min-height: 100vh;
+}
+/* Bootstrap Fix */
+.col-md-6,
+.row {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+/* Navbar Styles */
+.myNavbar {
+  font-family: GrilledCheese BTN Toasted;
+  font-size: 0.9em;
+  position: fixed;
+  position: -webkit-sticky;
+  height: 96.6px;
+  display: flex;
+  /* justify-content: space-between; */
+  width: 100%;
+  background-color: var(--main-red);
+  color: var(--main-white);
+  border-bottom: 1px solid var(--main-black);
+  z-index: 4;
+  text-transform: uppercase;
+}
+.navBarLinks {
+  display: flex;
+  margin-left: auto;
+  width: 60%;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+  /* pointer-events: none; */
+}
+
+.navBarLinks li {
+  position: relative;
+  list-style: none;
+  padding: 1rem 0;
+}
+
+.footerList li {
+  position: relative;
+  list-style: none;
+}
+.navBarLinks a,
+.footerList a {
+  color: #fff;
+  display: inline-block;
+  padding: 1px 1px;
+  position: relative;
+}
+
+.navBarLinks li:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 12px;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+.footerList li:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 1px;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+.navBarLinks li:hover:after,
+.footerList li:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+.navBarLinks li a {
+  text-decoration: none;
+  color: var(--main-white);
+  cursor: pointer;
+}
+.navBarLinks a.active:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: -4px;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 0;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 100%;
+}
+.navbarLogo {
+  margin: 1rem;
+  display: inline;
+}
+
+/* Main Body Styles */
+.main-hero {
+  position: relative;
+  top: 96.6px;
+  height: 90vh;
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.103),
+      rgba(0, 0, 0, 0.082)
+    ),
+    url("../imgs/big-ms-2a.jpg") no-repeat center center / cover;
+}
+.main-hero-caption {
+  position: absolute;
+  top: 50vh;
+  padding: 20px 30px;
+  left: calc(50vw - 236px);
+  background-color: var(--main-red);
+  color: var(--main-white);
+  z-index: 0;
+  box-shadow: 0 0 10px 3px black;
+  border-radius: 0.15rem;
+}
+.main-hero-caption h1 {
+  font-size: 20px;
+  font-weight: 600;
+}
+.hero-covid {
+  position: relative;
+  top: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 15%;
+  margin-right: 15%;
+  padding: 50px;
+  background-color: var(--main-red);
+  z-index: 3;
+  color: white;
+  border-radius: 0.3rem;
+  box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.384);
+  font-size: calc(5px + 1vw);
+}
+.hero-covid h2 {
+  font-size: calc(30px + 1vw);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.close-x {
+  position: absolute;
+  font-size: 25px;
+  opacity: 0.8;
+  right: 10px;
+  top: 5px;
+  transition: all 0.25s cubic-bezier(0.17, 0.67, 0.3, 1.12);
+}
+.close-x:hover {
+  cursor: pointer;
+  transform: rotateZ(180deg);
+}
+.covid-p {
+  line-height: 2em;
+}
+/* .hero-png {
+  position: relative;
+  top: calc(80vh / 2);
+  left: calc(100vw / 2  - 275px);
+  transform: rotate(-10deg)
+} */
+.main-content {
+  width: 100%;
+  position: relative;
+  top: 96.6px;
+  color: var(--main-black);
+  text-align: center;
+}
+.main-location,
+.main-menu {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+    rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  border-radius: 10px;
+  padding: 4rem 1rem;
+  margin: 3rem;
+}
+
+.main-links {
+  display: flex;
+  justify-content: center;
+}
+.cardButton {
+  padding: 5px 30px;
+  background-color: var(--main-black);
+  border: none;
+  color: var(--main-white);
+  border-radius: 7px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: 0.5s;
+  margin: 1em;
+}
+.cardButton span {
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  background-color: var(--main-red);
+  transform: translateY(150%);
+  border-radius: 50%;
+  left: calc((var(--n) - 1) * 25%);
+  transition: 0.5s;
+  transition-delay: calc((var(--n) - 1) * 0.1s);
+  z-index: -1;
+}
+.cardButton:hover span {
+  transform: translateY(0) scale(2);
+}
+.cardButton span:nth-child(1) {
+  --n: 1;
+}
+.cardButton span:nth-child(2) {
+  --n: 2;
+}
+.cardButton span:nth-child(3) {
+  --n: 3;
+}
+.cardButton span:nth-child(4) {
+  --n: 4;
+}
+.main-insta {
+  position: relative;
+  top: 96.6px;
+  width: 100%;
+  background-color: var(--main-red);
+  /* height: 60vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--main-white);
+}
+
+/* About Us Styles */
+.about-img {
+  position: relative;
+  top: 96.6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.burgerOriginal {
+  margin: 3rem;
+  transform: rotateZ(-5deg);
+}
+.about-row {
+  position: relative;
+  top: 96.6px;
+  width: 90%;
+  margin: 1rem auto !important;
+}
+.about-info-one,
+.about-pic-one {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Footer Styles */
+footer {
+  position: relative;
+  bottom: 0;
+  top: 96.6px;
+  left: 0;
+  width: 100%;
+  background-color: var(--main-black);
+  overflow: hidden;
+  color: var(--main-white);
+}
+
+.footerLinks {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+  width: 100%;
+}
+.footerInternal {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.footerInternal ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footerInternal li {
+  margin: 0.5rem 1rem;
+}
+.footerInternal a {
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--main-white);
+}
+.social-icons {
+  width: 100%;
+}
+.copyrightBottom {
+  font-size: 12px;
+  margin-bottom: 0;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 768px) {
+  .line {
+    width: 40px;
+    height: 3px;
+    background-color: white;
+    margin: 10px;
+  }
+
+  /* .myNavbar {
+    position: relative;
+  } */
+
+  .hamburger {
+    position: absolute;
+    right: 3%;
+    top: 50%;
+    cursor: pointer;
+    transform: translate(-3%, -50%);
+    z-index: 1;
+  }
+
+  .navBarLinks {
+    position: fixed;
+    background-color: var(--main-red);
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    -webkit-clip-path: circle(100px at 90% -12%);
+    clip-path: circle(100px at 90% -12%);
+    transition: all 1s ease-out;
+    justify-content: center;
+  }
+
+  .navBarLinks.open {
+    -webkit-clip-path: circle(1400px at 90% -12%);
+    clip-path: circle(1400px at 90% -12%);
+    pointer-events: all;
+  }
+  .navbarLogo {
+    position: relative;
+    z-index: 3;
+  }
+  .hero-covid {
+    top: 10%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .covid-flex-wrap {
+    font-size: 1.5em;
+  }
+  .covid-flex-wrap h2 {
+    font-size: 2.4em;
+  }
+  footer {
+    position: relative;
+    bottom: 0;
+    height: auto;
+    text-align: center;
+    padding-bottom: 8px;
+  }
+  /* .index-page.content-wrapper {
+    padding-bottom: 406.8px;
+  } */
+  ul.footerList {
+    flex-direction: column;
+    margin: 1rem 0;
+  }
+
+  .main-location,
+  .main-menu {
+    margin: 0;
+    margin-top: 1rem;
+    padding: 2rem 0.5rem;
+  }
+  .main-content {
+    margin-bottom: 2rem;
+  }
+}
+@media screen and (max-width: 540px) {
+  .main-hero-caption {
+    width: 97vw;
+    left: 1.5vw;
+    text-align: center;
+    line-height: 20px;
+    letter-spacing: 0.08em;
+  }
+  .hero-covid {
+    margin-left: 1%;
+    margin-right: 1%;
+  }
+}
