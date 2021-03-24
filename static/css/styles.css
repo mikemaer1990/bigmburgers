@@ -24,8 +24,10 @@ html {
 
 html,
 body {
+  height: 100%;
   width: 100%;
   overflow-x: hidden;
+  color: var(--main-black);
 }
 
 body {
@@ -73,18 +75,14 @@ body {
   /* pointer-events: none; */
 }
 .nav-number {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 3px;
-  border: 1px solid;
-  height: 80%;
   margin: auto 2rem;
   padding: 0 15px;
 }
 .nav-ajax {
+  position: absolute;
   font-size: 12px;
+  bottom: 0;
+  left: 5px;
 }
 .nav-phone {
   color: var(--main-black);
@@ -388,12 +386,6 @@ body {
   transform: rotateZ(1deg);
   transition: all 0.5s;
 }
-.about-pic-one img:hover {
-  transform: rotateZ(1deg);
-}
-.about-pic-two img:hover {
-  transform: rotateZ(-1deg);
-}
 
 .line-through {
   width: 100%;
@@ -413,15 +405,22 @@ body {
 
 /* Blueprint Styles */
 .blueprint.page-container {
-  min-height: calc(100vh - 127.15px - 96.6px);
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100% - 96.6px);
 }
 .blueprint.content-wrapper {
+  flex: 1 0 auto;
+  min-height: 0;
+  height: auto;
   width: 70%;
   margin: 1rem auto;
 }
-
+.blueprint.page-container footer {
+  flex-shrink: 0;
+}
 .blueprint-header {
-  padding-top: 5rem;
+  padding-top: 3rem;
   border-bottom: 1px solid var(--main-black);
   margin-bottom: 2rem;
 }
@@ -436,13 +435,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: calc(0.3em + 1.3vw);
+  font-size: 18px;
+}
+.blueprint-image {
+  width: 60%;
+  margin: 1rem auto;
 }
 .blueprint-picture {
   width: 100%;
-  margin: 2rem auto;
-  border: 1px solid #efefef;
-  background: #fff;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset;
 }
 .blueprint-picture {
@@ -538,24 +538,43 @@ address {
 #tabs li a.inactive:hover {
   outline: none;
 }
-.our-menu-graphic {
+.our-menu-graphic,
+.events-graphic {
   width: 50%;
+  height: auto;
   min-width: 240px;
+  min-height: 72.05px;
+  max-width: 469.617px;
+  max-height: 141px;
+}
+.menu-section h1.line-through {
+  margin-top: 25px;
+}
+.burger-info p {
+  margin-bottom: -25px !important;
+  text-align: left;
 }
 
 .menu.content-wrapper {
-  width: 50%;
-  margin: 2rem auto;
+  width: 55%;
+  margin: 2rem auto 3rem auto;
   text-align: center;
 }
 .menu-section {
   display: flex;
   justify-content: space-evenly;
 }
+
 .menu-item {
-  border: 1px solid;
   padding: 1rem !important;
   display: flex;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  transition: all 0.5s;
+}
+
+.menu-item:hover {
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
 }
 .menu-image {
   width: 125px;
@@ -564,17 +583,96 @@ address {
 
 .burger-info {
   width: 100%;
+  padding-left: 10px !important;
   display: flex;
   align-items: center;
-  /* margin-left: auto; */
+  font-size: 0.8em;
 }
 .bold-text {
   font-weight: 700;
 }
+
+/* Events Styles */
+.events.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100% - 96.6px);
+}
+.events.content-wrapper {
+  flex: 1 0 auto;
+  min-height: 0;
+  height: auto;
+  width: 65%;
+  margin: 0 auto;
+  text-align: center;
+}
+.events.page-container footer {
+  flex-shrink: 0;
+}
+.events-list-section {
+  margin: 3rem 0;
+}
+.event-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 25px;
+  transition: all 0.15s ease;
+}
+.event-img {
+  width: 115px;
+  height: 115px;
+}
+.event-info {
+  font-size: 0.9em;
+  text-align: left;
+  display: inline;
+  padding-left: 2rem;
+}
+.event-info-head {
+  font-size: 0.9em;
+}
+.event-wrapper h3 {
+  font-size: 1.2em;
+  font-weight: 700;
+}
+.events-header {
+  padding: 2rem 0;
+}
+.events-list a {
+  text-decoration: none;
+  color: var(--main-black);
+  transition: all 1s;
+}
+.event-wrapper:hover {
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 2px;
+}
+
+/* Career Styles */
+.career.page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: calc(100% - 96.6px);
+}
+.career.content-wrapper {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 0;
+  width: 65%;
+  margin-top: -5vh;
+  text-align: center;
+}
 /* Footer Styles */
 footer {
   position: relative;
-  bottom: 0;
+  bottom: 0px;
   left: 0;
   /* top: 96.6px; */
   width: 100%;
@@ -619,13 +717,20 @@ footer {
 }
 
 /* Media Queries */
-
+@media screen and (max-width: 1500px) {
+  .menu.content-wrapper {
+    width: 60%;
+  }
+}
 @media screen and (max-width: 1200px) {
   .about-info-one,
   .about-info-two {
     font-size: 0.85em;
   }
   .contact.content-wrapper {
+    width: 80%;
+  }
+  .menu.content-wrapper {
     width: 80%;
   }
 }
@@ -697,6 +802,12 @@ footer {
         rgba(0, 0, 0, 0.082)
       ),
       url("../imgs/big-ms-2a.jpg") no-repeat center bottom / fill;
+  }
+  .menu.content-wrapper {
+    width: 90%;
+  }
+  .events.content-wrapper {
+    width: 90%;
   }
 }
 @media screen and (max-width: 768px) {
@@ -803,6 +914,21 @@ footer {
     padding-top: 1rem;
     width: 95%;
   }
+  .menu.content-wrapper {
+    width: 95%;
+  }
+  .menu-header p {
+    font-size: 0.85em;
+  }
+  .events.content-wrapper {
+    width: 95%;
+  }
+  .event-info {
+    font-size: 0.8em;
+  }
+  .event-info-head {
+    font-size: 0.785em;
+  }
 }
 @media screen and (max-width: 616px) {
   .mapouter-mobile {
@@ -834,6 +960,19 @@ footer {
         rgba(0, 0, 0, 0.082)
       ),
       url("../imgs/big-ms-2a.jpg") no-repeat center bottom / fill;
+  }
+  .event-info-head {
+    padding: 0 5px;
+  }
+  .event-wrapper {
+    padding: 10px 3px;
+  }
+  .events.content-wrapper {
+    width: 100%;
+  }
+  .event-img {
+    width: 80px;
+    height: 80px;
   }
 }
 @media screen and (max-width: 540px) {
@@ -876,6 +1015,9 @@ footer {
         rgba(0, 0, 0, 0.082)
       ),
       url("../imgs/big-ms-2a.jpg") no-repeat center bottom / fill;
+  }
+  .menu.content-wrapper {
+    width: 100%;
   }
 }
 @media screen and (max-width: 380px) {
