@@ -51,9 +51,7 @@ body {
   margin: 0 !important;
   padding: 0 !important;
 }
-a.eapps-link {
-  z-index: -9999999 !important;
-}
+
 /* Navbar Styles */
 .myNavbar {
   /* font-family: GrilledCheese BTN Toasted; */
@@ -69,7 +67,7 @@ a.eapps-link {
   background-color: var(--main-red);
   color: var(--main-white);
   border-bottom: 1px solid var(--main-black);
-  z-index: 99999999 !important;
+  z-index: 4 !important;
   text-transform: uppercase;
 }
 .navBarLinks {
@@ -101,7 +99,17 @@ a.eapps-link {
   list-style: none;
   padding: 1rem 0;
 }
+.change .line1 {
+  transform: rotate(-45deg) translate(-9px, 9px);
+}
 
+.change .line2 {
+  opacity: 0;
+}
+
+.change .line3 {
+  transform: rotate(45deg) translate(-9px, -10px);
+}
 .footerList li {
   position: relative;
   list-style: none;
@@ -113,7 +121,11 @@ a.eapps-link {
   padding: 1px 1px;
   position: relative;
 }
-
+#tabs a {
+  display: inline-block;
+  padding: 1px 1px;
+  position: relative;
+}
 .navBarLinks li:after {
   background: none repeat scroll 0 0 transparent;
   bottom: 12px;
@@ -138,8 +150,22 @@ a.eapps-link {
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
 }
+#tabs li:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2.5px;
+  left: 50%;
+  position: absolute;
+  background: var(--main-red);
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
 .navBarLinks li:hover:after,
-.footerList li:hover:after {
+.footerList li:hover:after,
+#tabs li:hover:after {
   width: 100%;
   left: 0;
 }
@@ -175,12 +201,27 @@ a.eapps-link {
   height: 70vh;
   background: linear-gradient(
       180deg,
-      rgba(0, 0, 0, 0.192),
-      rgba(0, 0, 0, 0.027)
+      rgba(0, 0, 0, 0.103),
+      rgba(0, 0, 0, 0.082)
     ),
     url("../imgs/big-ms-2a.jpg") no-repeat center center / cover;
 }
 
+.red-stripe {
+  font-size: 24px;
+  color: var(--main-white);
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  width: 100%;
+  background-color: var(--main-red);
+  line-height: 32px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
 .hero-covid {
   position: absolute;
   display: flex;
@@ -231,9 +272,9 @@ a.eapps-link {
     rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
     rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
   border-radius: 10px;
-  padding: 1rem 3rem 0rem 3rem;
+  padding: 1rem 1rem 0rem 1rem;
   /* margin: 3rem; */
-  max-width: 403px;
+  max-width: 293px;
 }
 
 .main-links {
@@ -441,8 +482,7 @@ a.eapps-link {
 }
 /* Contact Styles */
 .contact-map {
-  padding-top: 3rem;
-  padding-bottom: 2rem;
+  padding: 3rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -583,7 +623,42 @@ address {
 .bold-text {
   font-weight: 700;
 }
+/* MENU 2 STYLES */
 
+.menu-2.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100% - 96.6px);
+}
+.menu-2.content-wrapper {
+  flex: 1 0 auto;
+  min-height: 0;
+  height: auto;
+  width: 90%;
+  margin: 1rem auto;
+}
+.menu-2.page-container footer {
+  flex-shrink: 0;
+}
+.menu-2-header {
+  text-align: center;
+}
+.menu-2-menus {
+  position: relative;
+  width: 90%;
+  height: 100%;
+  margin: 3rem auto 3rem auto !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: auto;
+}
+.menu-2-menus img {
+  width: 100%;
+}
+.mobile.menu-2-menus {
+  display: none;
+}
 /* Events Styles */
 .events.page-container {
   display: flex;
@@ -802,6 +877,7 @@ footer {
     height: 3px;
     background-color: white;
     margin: 10px;
+    transition: all 0.5s;
   }
 
   .hamburger {
@@ -1037,6 +1113,12 @@ footer {
   .event-img {
     width: 80px;
     height: 80px;
+  }
+  .mobile.menu-2-menus {
+    display: flex;
+  }
+  .menu-2-menus {
+    display: none;
   }
 }
 @media screen and (max-width: 576px) {
