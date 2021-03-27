@@ -27,13 +27,13 @@ html,
 body {
   height: 100%;
   width: 100%;
+  overflow-x: hidden;
   color: var(--main-black);
 }
 
 body {
   font: 20px "Titillium Web", sans-serif;
   letter-spacing: 0.03em;
-  overflow-x: hidden;
 }
 .blackText {
   color: var(--main-black);
@@ -414,9 +414,6 @@ body {
   background: #fff;
   padding: 0 10px;
 }
-/* .about.content-wrapper {
-  margin-bottom: 2.5rem;
-} */
 
 /* Blueprint Styles */
 .blueprint.page-container {
