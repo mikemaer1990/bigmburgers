@@ -212,11 +212,11 @@ body {
   justify-content: center;
   align-items: center;
   top: 6.5%;
-  width: 80%;
+  width: 50%;
   padding: 50px;
-  background-color: var(--main-red);
+  background-color: hsl(358, 70%, 45%);
   z-index: 3;
-  color: white;
+  color: var(--main-white);
   border-radius: 0.3rem;
   border: 1px solid black;
   box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.384);
@@ -243,7 +243,9 @@ body {
 .covid-p {
   line-height: 2em;
 }
-
+.covid-list {
+  padding-left: 1.25rem;
+}
 .main-content {
   width: 100%;
   position: relative;
@@ -875,7 +877,7 @@ footer {
     position: absolute;
     left: -1px;
     background-color: var(--main-red);
-    width: 100vw;
+    width: 101vw;
     height: 100vh;
     flex-direction: column;
     -webkit-clip-path: circle(110px at 100% -18%);
@@ -921,6 +923,10 @@ footer {
   }
   .career.content-wrapper {
     width: 95%;
+  }
+  .hero-covid {
+    width: 60%;
+    padding: 25px 25px 10px 25px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -1103,6 +1109,17 @@ footer {
   .menu-2-menus {
     display: none;
   }
+  .hero-covid {
+    width: 80%;
+    min-height: 60vh;
+  }
+  .hero-covid .covid-flex-wrap p,
+  .covid-list {
+    font-size: 14px;
+  }
+  .covid-list {
+    padding-left: 0.9rem;
+  }
 }
 @media screen and (max-width: 576px) {
   .main-card h4,
@@ -1141,6 +1158,14 @@ footer {
   }
   .covid-flex-wrap p {
     font-size: 12px;
+  }
+  #tab7C .line-through {
+    border-bottom: none;
+    line-height: 30px;
+  }
+  #tab7C .line-through span {
+    background: transparent;
+    /* padding: none; */
   }
 }
 @media screen and (max-width: 380px) {
