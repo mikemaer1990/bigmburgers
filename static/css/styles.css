@@ -887,8 +887,8 @@ footer {
   }
 
   .navBarLinks.open {
-    -webkit-clip-path: circle(1400px at 100% -18%);
-    clip-path: circle(1400px at 100% -18%);
+    -webkit-clip-path: circle(2000px at 100% -18%);
+    clip-path: circle(2000px at 100% -18%);
     pointer-events: all;
   }
   .navbarLogo {
