@@ -387,6 +387,13 @@ body {
 .about-pic-two {
   padding-right: 1rem !important;
 }
+.card-one {
+  margin: 16px;
+  border: 1px solid #efefef;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+  transition: all 0.5s;
+}
 .about-pic-one img {
   margin: 16px;
   border: 1px solid #efefef;
@@ -740,12 +747,14 @@ address {
   width: 100%;
   max-width: 700px;
   max-height: 466px;
+  border-radius: 0.25rem;
 }
 .career-info {
   background-color: var(--main-red);
   color: white;
   padding: 2rem;
   text-align: left;
+  border-radius: 0.25rem;
 }
 .career-info a {
   font-weight: 700;
